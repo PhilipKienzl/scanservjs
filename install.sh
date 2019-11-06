@@ -57,6 +57,8 @@ cp -rf $srcdir/* $scansrvjs_home
 
 # Set the file owners
 chown -R scanservjs:users $scansrvjs_home/
+chmod a+x $scansrvjs_home/move.sh
+chmod a+x $scansrvjs_home/merge.sh
 
 # Update directory permissions so we can look inside
 find . -type d -exec chmod 755 {} +
