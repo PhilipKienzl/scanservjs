@@ -1,6 +1,9 @@
 # simple mod
-of scanservjs to support automatic document feeder (Epson Stylus SX6200FW)
-after Scan is hit, you can choose to scan Flatbed / odd pages / even pages and finally merge the tifs to pdf
+of scanservjs to support the automatic document feeder (Epson Stylus SX6200FW)
+after Scan is hit, you can choose to scan Flatbed / odd pages / even pages and finally merge the tifs to pdf.
+After odd pages are scanned you can just merge these for single sided docs or
+scan the even pages and then merge all tifs into one single pdf file
+merging is done by a simple bash script ("merge.sh")
 
 # dependency
 libtiff-tools
