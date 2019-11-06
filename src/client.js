@@ -84,6 +84,7 @@ $(document).ready(function () {
         device: null,
         files: null,
         resizeTimer: null,
+        adf: null,
 
         el: $("#app"),
         tagName: 'div',
@@ -216,7 +217,8 @@ $(document).ready(function () {
 
         scan: function () {
             page.mask();
-
+            var adf = prompt("Choose:\n 1 = Flatbed \n 2 = Odd pages \n 3 = Even pages \n 4 = Merge","1");
+            data.adf = adf;
             var data = this.model.toJSON();
             data.device = page.device;
             
