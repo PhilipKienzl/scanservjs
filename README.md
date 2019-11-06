@@ -1,3 +1,10 @@
+# simple mod
+of scanservjs to support automatic document feeder (Epson Stylus SX6200FW)
+after Scan is hit, you can choose to scan Flatbed / odd pages / even pages and finally merge the tifs to pdf
+
+# dependency
+libtiff-tools
+
 # scanservjs
 scanservjs is a nodejs port of scanserv. It's a simple web-based UI for SANE 
 which allows you to share a scanner on a network without the need for drivers 
