@@ -44,9 +44,21 @@ module.exports = function () {
 		if (scanRequest.convertFormat !== 'tif') {
 			cmd += ' | convert - ' + scanRequest.convertFormat + ':-';
 		}
-
-		// Last
-		cmd += ' > "' + scanRequest.outputFilepath + '"';
+		
+		switch(scanRequest.adf) {
+  			case '2':
+    			cmd += ' --batch --source "Automatic Document Feeder" && ./move odd';
+    			break;
+			case '3':
+  			cmd += ' --batch --source "Automatic Document Feeder" && ./move even';
+    			break;
+			case '4':
+			cmd = './merge.sh';
+			break;
+			default:
+			// Last
+			cmd += ' > "' + scanRequest.outputFilepath + '"';
+		}
 		return cmd;
 	};
 
