@@ -5,6 +5,10 @@ After odd pages are scanned you can just merge these for single sided docs or
 scan the even pages and then merge all tifs into one single pdf file
 
 merging is done by a simple bash script ("merge.sh")
+to install run
+npm install
+sudo ./install.sh
+
 
 # dependency
 libtiff-tools
