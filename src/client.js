@@ -216,11 +216,11 @@ $(document).ready(function () {
         },
 
         scan: function () {
-            page.mask();
             var adf = prompt("Choose:\n 1 = Flatbed \n 2 = Odd pages \n 3 = Even pages \n 4 = Merge","1");
-            data.adf = adf;
+            page.mask();
             var data = this.model.toJSON();
             data.device = page.device;
+            data.adf = adf;
             
             var request = {
                 url: 'scan',
