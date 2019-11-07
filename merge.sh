@@ -1,4 +1,5 @@
 #!/bin/bash
+outdir=${1}
 evenlen=`/bin/ls even/ | wc -l`
 oddlen=`/bin/ls odd/ | wc -l`
 echo $oddlen
@@ -12,7 +13,7 @@ outputfilename=${now}"-"${oclock}
 
 if ([ $oddlen -gt 0 ] && [ $evenlen -eq 0 ])
 then
-catstr="odd/*.tif"
+catstr=${outdir}"odd/*.tif"
 fi
 
 if [ $oddlen -gt 0 ] && [ $evenlen -gt 0 ]
@@ -20,16 +21,16 @@ then
 echo "Double sided"
 for page in $(seq 1 $oddlen)
 do
-catstr+="odd/out"${page}".tif even/out"${evenlen}".tif "
+catstr+=${outdir}"odd/out"${page}".tif ${outdir}even/out"${evenlen}".tif "
 let "evenlen = $evenlen - 1"
 done
 fi
 
 if [ "$catstr" != "" ]
 then
-/usr/bin/tiffcp -c lzw ${catstr} output.tif
-/usr/bin/tiff2pdf output.tif > data/output/${outputfilename}".pdf"
+/usr/bin/tiffcp -c lzw ${catstr} ${outdir}output.tif
+/usr/bin/tiff2pdf ${outdir}output.tif > ${outdir}${outputfilename}".pdf"
 #remove processed files
-/bin/rm odd/*
-/bin/rm even/*
-/bin/rm output.tif
+/bin/rm ${outdir}odd/*
+/bin/rm ${outdir}even/*
+/bin/rm ${outdir}output.tif
