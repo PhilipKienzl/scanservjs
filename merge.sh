@@ -1,7 +1,7 @@
 #!/bin/bash
 outdir=${1}
-evenlen=`/bin/ls even/ | wc -l`
-oddlen=`/bin/ls odd/ | wc -l`
+evenlen=`/bin/ls ${outdir}even/ | wc -l`
+oddlen=`/bin/ls ${outdir}odd/ | wc -l`
 echo $oddlen
 echo $evenlen
 catstr=""
@@ -34,3 +34,4 @@ then
 /bin/rm ${outdir}odd/*
 /bin/rm ${outdir}even/*
 /bin/rm ${outdir}output.tif
+fi
