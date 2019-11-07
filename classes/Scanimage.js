@@ -47,10 +47,10 @@ module.exports = function () {
 		
 		switch(scanRequest.adf) {
   			case '2':
-    			cmd += ' --batch=data/out%d --source "Automatic Document Feeder" && ./move.sh odd';
+    			cmd += ' --batch=data/odd/out%d --source "Automatic Document Feeder"';
     			break;
 			case '3':
-  			cmd += ' --batch=data/out%d --source "Automatic Document Feeder" && ./move.sh even';
+  			cmd += ' --batch=data/even/out%d --source "Automatic Document Feeder"';
     			break;
 			case '4':
 			cmd = './merge.sh';
