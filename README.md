@@ -6,9 +6,14 @@ scan the even pages and then merge all tifs into one single pdf file
 
 merging is done by a simple bash script ("merge.sh")
 to install run
+
 npm install
+
+gulp
+
 sudo ./install.sh
 
+sudo systemctl enable scanservjs
 
 # dependency
 libtiff-tools
