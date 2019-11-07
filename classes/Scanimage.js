@@ -47,13 +47,13 @@ module.exports = function () {
 		
 		switch(scanRequest.adf) {
   			case '2':
-    			cmd += ' --batch=data/odd/out%d --source "Automatic Document Feeder"';
+    			cmd += ' --batch=' + Config.OutputDirectory + 'odd/out%d --source "Automatic Document Feeder"';
     			break;
 			case '3':
-  			cmd += ' --batch=data/even/out%d --source "Automatic Document Feeder"';
+  			cmd += ' --batch=' + Config.OutputDirectory + 'even/out%d --source "Automatic Document Feeder"';
     			break;
 			case '4':
-			cmd = './merge.sh';
+			cmd = './merge.sh ' + Config.OutputDirectory;
 			break;
 			default:
 			// Last
