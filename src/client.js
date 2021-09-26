@@ -216,7 +216,7 @@ $(document).ready(function () {
         },
 
         scan: function () {
-            var adf = prompt("Choose:\n 1 = Flatbed \n 2 = Odd pages \n 3 = Even pages \n 4 = Merge","1");
+            var adf = prompt("Choose:\n 1 = Flatbed \n 2 = Odd pages \n 3 = Even pages \n 4 = Merge \n 5 = HP Scan Odd \n 6 = HP Scan Even \n 7 = HP Scan Merge","1");
             if (adf === null || adf === "") {
                 return;   
             }
