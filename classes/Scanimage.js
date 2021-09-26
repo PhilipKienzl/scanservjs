@@ -55,6 +55,15 @@ module.exports = function () {
 			case '4':
 			cmd = './merge.sh ' + Config.OutputDirectory;
 			break;
+			case '5':
+			cmd = 'hp-scan -s file -o data/output/odd.pdf --duplex';
+			break;
+			case '6':
+			cmd = 'hp-scan -s file -o data/output/even.pdf --duplex';
+			break;
+			case '7':
+			cmd = 'python3 merge.py data/output/odd.pdf data/output/even.pdf';
+			break;
 			default:
 			// Last
 			cmd += ' > "' + scanRequest.outputFilepath + '"';
