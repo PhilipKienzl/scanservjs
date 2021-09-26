@@ -17,6 +17,7 @@ sudo systemctl enable scanservjs
 
 # dependency
 libtiff-tools
+hp-scan
 
 # scanservjs
 scanservjs is a nodejs port of scanserv. It's a simple web-based UI for SANE 
